@@ -24,6 +24,7 @@ The project is intentionally lightweight:
 ```json
 {
   "listen": ":8080",
+  "ServiceName": "MyLab",
   "services": [
     {
       "name": "Grafana",
