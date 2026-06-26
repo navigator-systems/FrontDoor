@@ -8,7 +8,8 @@ import (
 
 type Service struct {
 	Name string `json:"name"`
-	URL  string `json:"url"`
+
+	URL string `json:"url"`
 }
 
 type Share struct {
@@ -18,14 +19,16 @@ type Share struct {
 }
 
 type Config struct {
-	Listen   string    `json:"listen"`
-	Services []Service `json:"services"`
-	Shares   []Share   `json:"shares"`
+	Listen        string    `json:"listen"`
+	ServicePortal string    `json:"ServiceName"`
+	Services      []Service `json:"services"`
+	Shares        []Share   `json:"shares"`
 }
 
 type PageData struct {
-	Services []Service
-	Shares   []Share
+	ServiceName string
+	Services    []Service
+	Shares      []Share
 }
 
 var config Config

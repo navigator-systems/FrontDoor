@@ -21,8 +21,9 @@ func Server() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	data := PageData{
-		Services: config.Services,
-		Shares:   config.Shares,
+		ServiceName: config.ServicePortal,
+		Services:    config.Services,
+		Shares:      config.Shares,
 	}
 
 	_ = tpl.Execute(w, data)
