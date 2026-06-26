@@ -1,0 +1,13 @@
+[Unit]
+Description=FrontDoor Service Portal
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/frontdoor
+ExecStart=/opt/frontdoor/frontdoor server
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

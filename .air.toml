@@ -1,0 +1,5 @@
+[build]
+
+cmd = "go build ."
+
+bin = "./frontdoor"
