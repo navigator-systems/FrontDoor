@@ -32,7 +32,7 @@ type PageData struct {
 }
 
 var config Config
-var tpl = template.Must(template.ParseFiles("templates/index.html"))
+var tpl = template.Must(template.ParseGlob("templates/*.html"))
 
 func loadConfig() error {
 	data, err := os.ReadFile("services.json")
@@ -40,4 +40,14 @@ func loadConfig() error {
 		return err
 	}
 	return json.Unmarshal(data, &config)
+}
+
+func saveConfig() error {
+
+	data, err := json.MarshalIndent(config, "", "    ")
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile("services.json", data, 0644)
 }
