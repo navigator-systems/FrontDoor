@@ -13,6 +13,8 @@ func Server() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/add", addHandler)
+	mux.HandleFunc("/remove", rmHandler)
 	mux.HandleFunc("/go", redirectHandler)
 
 	log.Println("Listening on", config.Listen)
@@ -26,7 +28,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		Shares:      config.Shares,
 	}
 
-	_ = tpl.Execute(w, data)
+	_ = tpl.ExecuteTemplate(w, "index.html", data)
 }
 
 func redirectHandler(w http.ResponseWriter, r *http.Request) {

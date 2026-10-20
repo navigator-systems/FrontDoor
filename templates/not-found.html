@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Not Found - FrontDoor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            background: #0f1117;
+            color: #e6e6e6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .message {
+            background: #161a22;
+            border: 1px solid #242a38;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 16px;
+            color: #9abaff;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Service not found</h1>
+        <div class="message">
+            <p>The service "{{.Name}}" was not found in the configuration.</p>
+            <a href="/">Return to the front page</a>
+        </div>
+    </main>
+</body>
+</html>

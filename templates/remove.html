@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Service - FrontDoor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            background: #0f1117;
+            color: #e6e6e6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            font: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FrontDoor</h1>
+        <h2>Remove Service</h2>
+        <p>Enter the exact service name, including capitalization, numbers or any special characters.</p>
+        <form action="/remove" method="POST">
+            <label for="name">Service name</label>
+            <input id="name" type="text" name="name" required>
+            <button type="submit">Remove</button>
+        </form>
+    </div>
+</body>
+</html>
